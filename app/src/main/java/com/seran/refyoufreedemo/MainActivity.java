@@ -5,12 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
+
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
-import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     MediaPlayer sound2, sound3, sound1;
@@ -24,52 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //Music part
 
-        public void play(View v)
-        {
-            switch (n) {
-                case(1):
-                    sound1 = MediaPlayer.create(this, R.raw.1);
-                    sound1.start();
-                    n=2;
-                    m=2;
-                    break;
-
-
-                case (2):
-                    if (sound1!=null)
-                        sound1.pause();
-                    if(sound2!=null)
-                        sound2.pause();
-                    n=1;
-                    m=1;
-                    break;
-
-                default: break;
-            }
-        }
-        public void cups(View v)
-        {
-
-            switch(m) {
-                case 1:
-                    sound2 = MediaPlayer.create(this, R.raw.2);
-                    sound2.start();
-                    m=2;
-                    n=2;
-                    break;
-
-
-                case 2:
-                    if(sound1!=null)
-                        sound1.pause();
-                    if (sound2!=null)
-                        sound2.pause();
-                    n=1;
-                    m=1;
-                    break;
-
-            }
-        }
 
 
 
@@ -143,6 +95,53 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void play(View v)
+    {
+        switch (n) {
+            case(1):
+                sound1 = MediaPlayer.create(this, R.raw.one);
+                sound1.start();
+                n=2;
+                m=2;
+                break;
+
+
+            case (2):
+                if (sound1!=null)
+                    sound1.pause();
+                if(sound2!=null)
+                    sound2.pause();
+                n=1;
+                m=1;
+                break;
+
+            default: break;
+        }
+    }
+    public void cups(View v)
+    {
+
+        switch(m) {
+            case 1:
+                sound2 = MediaPlayer.create(this, R.raw.two);
+                sound2.start();
+                m=2;
+                n=2;
+                break;
+
+
+            case 2:
+                if(sound1!=null)
+                    sound1.pause();
+                if (sound2!=null)
+                    sound2.pause();
+                n=1;
+                m=1;
+                break;
+
+        }
+    }
+
 }
 
 //1. language 2. News, Info about countries, Application process 3. Info about Canada
