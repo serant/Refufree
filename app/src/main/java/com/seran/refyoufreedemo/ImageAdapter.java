@@ -23,7 +23,7 @@ public class ImageAdapter extends BaseAdapter {
         return mThumbIds.length;
     }
 
-    public Object getItem(int poistion) {
+    public Object getItem(int position) {
         return null;
     }
 
@@ -35,8 +35,8 @@ public class ImageAdapter extends BaseAdapter {
         ImageView imageView;
         if (convertView == null) {
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setLayoutParams(new GridView.LayoutParams(300, 300));
+            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             imageView.setPadding(8, 8, 8, 8);
         } else  {
             imageView = (ImageView) convertView;
@@ -48,16 +48,18 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     private Integer[] mThumbIds = {
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
+            R.drawable.number_1,
+            R.drawable.number_2,
+            R.drawable.number_3,
+            R.drawable.number_4,
+            R.drawable.number_5,
+            R.drawable.number_6,
+            R.drawable.number_7,
+            R.drawable.number_8,
+            R.drawable.number_9,
+            R.drawable.asterisk,
+            R.drawable.number_0,
+            R.drawable.pound,
+            R.drawable.call
     };
 }
