@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final StringBuilder s = new StringBuilder(16);
-        levels = new boolean[3];
-        for (int i = 0; i < levels.length; i++) {
-            levels[i] = false;
+        levels = new boolean[4];
+        for (int j = 0; j < levels.length; j++) {
+            levels[j] = false;
         }
 
 
