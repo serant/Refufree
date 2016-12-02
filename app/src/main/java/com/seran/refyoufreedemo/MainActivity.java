@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         final StringBuilder s = new StringBuilder(16);
-        levels = new boolean[3];
-        for (int i = 0; i < levels.length; i++) {
-            levels[i] = false;
+        levels = new boolean[4];
+        for (int j = 0; j < levels.length; j++) {
+            levels[j] = false;
         }
 
 
@@ -75,12 +75,15 @@ public class MainActivity extends AppCompatActivity {
                         {
                             i++;
                             Toast.makeText(MainActivity.this, "level 1", Toast.LENGTH_SHORT).show();
+                            play(v);
                             levels[i] = true;
                         }
                         if (s.length() == 12 && callEnabled == true && q.charAt(q.length() - 1) == '2' && levels[i] == true)
                         {
                             i++;
                             Toast.makeText(MainActivity.this, "level 2", Toast.LENGTH_SHORT).show();
+                            play(v);
+                            cups(v);
                             levels[i] = true;
                         }
                         if (s.length() == 13 && callEnabled == true && q.charAt(q.length() - 1) == '3' && levels[i] == true)
