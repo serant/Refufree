@@ -4,8 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new ImageAdapter(this));
 
-        final TextView textView = (TextView) findViewById(R.id.textview);
+        final EditText editText = (EditText) findViewById(R.id.editText);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     default:
                         if (s.length() < 16) {
                             s.append(text[position]);
-                            textView.setText(s);
+                            editText.setText(s);
                         }
                         break;
                 }
