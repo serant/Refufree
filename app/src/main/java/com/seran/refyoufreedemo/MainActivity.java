@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         final StringBuilder s = new StringBuilder(16);
         levels = new boolean[3];
         for (int i = 0; i < levels.length; i++) {
@@ -50,8 +49,16 @@ public class MainActivity extends AppCompatActivity {
                 };
                 switch (position) {
                     case 12:
+                        // Do nothing to ignore the whitespace being held by buttons
+                        // (Yes, I know this is extremely hacky)
+                        break;
+                    case 13:
                         callEnabled = true;
-                        Toast.makeText(MainActivity.this, "call started", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(MainActivity.this, "call started", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 14:
+                        // Do nothing to ignore the whitespace being held by buttons
+                        // (Yes, I know this is extremely hacky)
                         break;
                     default:
                         if (s.length() < 16) {
