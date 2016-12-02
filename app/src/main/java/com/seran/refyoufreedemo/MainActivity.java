@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,12 +27,23 @@ public class MainActivity extends AppCompatActivity {
         for (int j = 0; j < levels.length; j++) {
             levels[j] = false;
         }
+        final EditText editText = (EditText) findViewById(R.id.editText);
 
 
         GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new ImageAdapter(this));
 
-        final EditText editText = (EditText) findViewById(R.id.editText);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.backspace);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (s.length() != 0) {
+                    s.deleteCharAt(s.length()-1);
+                    editText.setText(s);
+                }
+            }
+        });
+
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
@@ -70,18 +82,18 @@ public class MainActivity extends AppCompatActivity {
                             editText.setText(s);
                         }
                         String q = s.toString();
-                        if (s.length() == 10 && callEnabled == true) {
+                        if (s.length() == 11 && callEnabled == true) {
                             Toast.makeText(MainActivity.this, "Call answered!" , Toast.LENGTH_SHORT).show();
                             levels[i] = true;
                         }
-                        if (s.length() == 11 && callEnabled == true && q.charAt(q.length() - 1) == '1' && levels[i] == true)
+                        if (s.length() == 12 && callEnabled == true && q.charAt(q.length() - 1) == '1' && levels[i] == true)
                         {
                             i++;
                             Toast.makeText(MainActivity.this, "level 1", Toast.LENGTH_SHORT).show();
                             play(v);
                             levels[i] = true;
                         }
-                        if (s.length() == 12 && callEnabled == true && q.charAt(q.length() - 1) == '2' && levels[i] == true)
+                        if (s.length() == 13 && callEnabled == true && q.charAt(q.length() - 1) == '2' && levels[i] == true)
                         {
                             i++;
                             Toast.makeText(MainActivity.this, "level 2", Toast.LENGTH_SHORT).show();
@@ -89,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                             cups(v);
                             levels[i] = true;
                         }
-                        if (s.length() == 13 && callEnabled == true && q.charAt(q.length() - 1) == '3' && levels[i] == true)
+                        if (s.length() == 14 && callEnabled == true && q.charAt(q.length() - 1) == '3' && levels[i] == true)
                         {
                             i++;
                             Toast.makeText(MainActivity.this, "level 3", Toast.LENGTH_SHORT).show();

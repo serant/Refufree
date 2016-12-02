@@ -49,6 +49,14 @@ public class ImageAdapter extends BaseAdapter {
         }
 
         switch (position) {
+            case 9:
+                imageView.setPadding(70, 70, 70, 70);
+                break;
+
+            case 11:
+                imageView.setPadding(70, 70, 70, 70);
+                break;
+
             case 12:
                 imageView.setVisibility(ImageView.GONE);
                 imageView.setEnabled(false);

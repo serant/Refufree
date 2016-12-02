@@ -24,12 +24,12 @@
             android:enabled="false"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:typeface="serif"
-            android:textSize="24sp"
+            android:typeface="sans"
+            android:textSize="36sp"
             android:background="@android:drawable/editbox_background_normal"
             android:shadowColor="@color/colorAccent"
             android:layout_weight="1"
-            android:textColor="@color/white"/>
+            android:textColor="@android:color/black"/>
         <ImageButton
             android:id="@+id/backspace"
             android:layout_width="match_parent"
