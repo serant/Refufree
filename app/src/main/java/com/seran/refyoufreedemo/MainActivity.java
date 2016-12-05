@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        sound1 = MediaPlayer.create(this, R.raw.one);
         final StringBuilder s = new StringBuilder(16);
         levels = new boolean[4];
         for (int j = 0; j < levels.length; j++) {
@@ -84,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
                         String q = s.toString();
                         if (s.length() == 11 && callEnabled == true) {
                             Toast.makeText(MainActivity.this, "Call answered!" , Toast.LENGTH_SHORT).show();
+
+                        sound1.start();
+
                             levels[i] = true;
                         }
                         if (s.length() == 12 && callEnabled == true && q.charAt(q.length() - 1) == '1' && levels[i] == true)
